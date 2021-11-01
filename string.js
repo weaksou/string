@@ -1,4 +1,4 @@
-//Capitalize first letter function
+//Capitalize first letter
 exports.capitalize = function (string) {
   //crop fist letter
   const firstLetter = string.substring(0, 1);
@@ -9,3 +9,15 @@ exports.capitalize = function (string) {
   //return the cropped version
   return finalString;
 };
+
+//simplify
+exports.simplify = function(string) {
+    //regular expression to replaces all non-alphanumeric characters.
+    const regExp = /[^a-z0-9]/gi;
+    //using the regExp
+    const cleaned = string.replace(regExp, "");
+    //removing spaces from the cleaned string
+    const finall = cleaned.replace(" ", "");
+    //reurn the finall version
+    return finall;
+}
