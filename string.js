@@ -18,6 +18,6 @@ exports.simplify = function(string) {
     const cleaned = string.replace(regExp, "");
     //removing spaces from the cleaned string
     const finall = cleaned.replace(" ", "");
-    //reurn the finall version
+    //return the finall version
     return finall;
 }
