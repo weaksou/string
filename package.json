@@ -1,6 +1,6 @@
 {
   "name": "string-wks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Some string manipulation functions that I need to use commonly",
   "main": "string.js",
   "scripts": {
