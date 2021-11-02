@@ -1,4 +1,4 @@
-//Capitalize first letter
+//Capitalize first letter: HellO USER => Hello user
 exports.capitalize = function (string) {
   //crop fist letter
   const firstLetter = string.substring(0, 1);
@@ -10,7 +10,7 @@ exports.capitalize = function (string) {
   return finalString;
 };
 
-//simplify
+//simplify:  HELLo user30,c => hellouser30c 
 exports.simplify = function(string) {
     //regular expression to replaces all non-alphanumeric characters.
     const regExp = /[^a-z0-9]/gi;
@@ -18,6 +18,7 @@ exports.simplify = function(string) {
     const cleaned = string.replace(regExp, "");
     //removing spaces from the cleaned string
     const finall = cleaned.replace(" ", "");
-    //reurn the finall version
+    //return the finall version
     return finall;
 }
+

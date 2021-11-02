@@ -1,0 +1,19 @@
+{
+  "name": "string-wks",
+  "version": "1.0.0",
+  "description": "Some string manipulation functions that I need to use commonly",
+  "main": "string.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weaksou/string.git"
+  },
+  "author": "weaks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weaksou/string/issues"
+  },
+  "homepage": "https://github.com/weaksou/string#readme"
+}
