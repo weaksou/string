@@ -1,24 +1,42 @@
-//Capitalize first letter: HellO USER => Hello user
-exports.capitalize = function (string) {
+//exporting functions
+exports.capitalize = capitalize;
+exports.noSpace = noSpace;
+exports.escape = escape;
+exports.simplify = simplify;
+exports.kebab = kebab;
+
+
+//capitalize first letter of a string and turn others to small caps. capitalize("hello") > Hello
+function capitalize(str) {
   //crop fist letter
-  const firstLetter = string.substring(0, 1);
+  const firstLetter = str.substring(0, 1);
   //crop the other letters expect for the first one
-  const otherLetters = string.substring(1, string.length);
+  const otherLetters = str.substring(1, str.length);
   //capitalize first Letter and assemble it with lowercase other Letters
   const finalString = firstLetter.toUpperCase() + otherLetters.toLowerCase();
   //return the cropped version
   return finalString;
-};
-
-//simplify:  HELLo user30,c => hellouser30c 
-exports.simplify = function(string) {
-    //regular expression to replaces all non-alphanumeric characters.
-    const regExp = /[^a-z0-9]/gi;
-    //using the regExp
-    const cleaned = string.replace(regExp, "");
-    //removing spaces from the cleaned string
-    const finall = cleaned.replace(" ", "");
-    //return the finall version
-    return finall;
 }
 
+//noSpace. remove all spaces in your noSpace("He ll o") > "Hello"
+function noSpace(str) {
+  return str.replace(" ", "");
+}
+//remove all non-alphanumeric characters from string. escape("hello&#9!_WORLD") >hello9WORLD
+function escape(str) {
+  //regular expression
+  const regExp = /[^a-z0-9]/gi;
+  return str.replace(regExp, "");
+}
+
+//simplify
+function simplify(str){
+  let text = str;
+  text = escape(text);
+  text = noSpace(text);
+  return text.toLowerCase();
+}
+//kebab case
+function kebab(str) {
+  return escape(str).toLowerCase().replace(" ", "-");
+}
