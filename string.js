@@ -1,42 +1,66 @@
 //exporting functions
-exports.capitalize = capitalize;
-exports.noSpace = noSpace;
-exports.escape = escape;
-exports.simplify = simplify;
-exports.kebab = kebab;
+export {
+  capitalize,
+  noSpace,
+  escape,
+  escapeSimple,
+  kebab,
+  oneSpace,
+  elaps,
+  validateURL,
+  trimTo
+};
 
-
-//capitalize first letter of a string and turn others to small caps. capitalize("hello") > Hello
 function capitalize(str) {
-  //crop fist letter
-  const firstLetter = str.substring(0, 1);
-  //crop the other letters expect for the first one
-  const otherLetters = str.substring(1, str.length);
-  //capitalize first Letter and assemble it with lowercase other Letters
-  const finalString = firstLetter.toUpperCase() + otherLetters.toLowerCase();
-  //return the cropped version
-  return finalString;
+  const nStr = str.trim();
+  return (
+    nStr.trim().substring(0, 1).toUpperCase() +
+    nStr.substring(1, nStr.length).toLowerCase()
+  );
 }
 
-//noSpace. remove all spaces in your noSpace("He ll o") > "Hello"
 function noSpace(str) {
-  return str.replace(" ", "");
-}
-//remove all non-alphanumeric characters from string. escape("hello&#9!_WORLD") >hello9WORLD
-function escape(str) {
-  //regular expression
-  const regExp = /[^a-z0-9]/gi;
-  return str.replace(regExp, "");
+  return str.replace(/ /g, "");
 }
 
-//simplify
-function simplify(str){
-  let text = str;
-  text = escape(text);
-  text = noSpace(text);
-  return text.toLowerCase();
+function escape(str) {
+  return str.replace(/[^a-z0-9]/gi, "");
 }
-//kebab case
+
+function escapeSimple(str) {
+  return oneSpace(str.replace(/[^a-z0-9| ]/gi, ""));
+}
+
 function kebab(str) {
-  return escape(str).toLowerCase().replace(" ", "-");
+  return str
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9/d-]/gi, "-");
+}
+
+function oneSpace(str) {
+  return str.replace(/  +/g, " ");
+}
+
+function elaps(str) {
+  return str.replace(/\s\s+/g, " ");
+}
+
+function validateURL(URL) {
+  const regExp = new RegExp(
+    "^(https?:\\/\\/)?" +
+      "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" +
+      "((\\d{1,3}\\.){3}\\d{1,3}))" +
+      "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" +
+      "(\\?[;&a-z\\d%_.~+=-]*)?" +
+      "(\\#[-a-z\\d_]*)?$",
+    "i"
+  );
+  return !!regExp.test(URL);
+}
+
+function trimTo(string, count, co){
+  const dotsCounter = co ? co : 100;
+  const dots = string.length >= dotsCounter ? "..." : "";
+  return string.substring(0, count).trim() + dots;
 }
