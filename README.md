@@ -54,11 +54,11 @@ validate a url, return false or true.
     > false
 **trimTo**
 trim a text to a specific count, takes three params, 
-	*trimTo(string,  count,  co)*
+	*trimTo(string,  count,  dotsCount)*
  1. **string:** text
  2. **count:** how many inputs you want to output from a string
  3. **dotsCount** *(optional)***:** add three dots at the end if string length is bigger than dotsCount, if not specified default is 100 character. 
->trimTo(string,  count,  co)
+>trimTo(string,  count)
 
 	
 		trimTo("hello world", 5)
