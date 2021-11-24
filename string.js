@@ -72,6 +72,3 @@ function trimToSimple(string, count) {
     string.substring(count, string.length)
   ]
 }
-
-
-console.log(trimToSimple("this is some text", 10));
