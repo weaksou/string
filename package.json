@@ -1,6 +1,6 @@
 {
   "name": "string-wks",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Some string manipulation functions that I need to use commonly",
   "main": "string.js",
   "scripts": {
@@ -17,5 +17,8 @@
     "url": "https://github.com/weaksou/string/issues"
   },
   "homepage": "https://github.com/weaksou/string#readme",
-  "keywords": ["string", "validate-url"]
+  "keywords": [
+    "string",
+    "validate-url"
+  ]
 }
