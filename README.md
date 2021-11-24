@@ -1,4 +1,4 @@
-﻿# I only created this for my personnal use, it will grow up by time :)
+﻿# I created this for my personnal use, it will grow up by time :)
 
 ## basic functions
 **capitalize**
@@ -56,7 +56,7 @@ validate a url, return false or true.
 trim a text to a specific count, takes three params, 
 	*trimTo(string,  count,  dotsCount)*
  1. **string:** text
- 2. **count:** how many inputs you want to output from a string
+ 2. **count:** where to cut the string
  3. **dotsCount** *(optional)***:** add three dots at the end if string length is bigger than dotsCount, if not specified default is 100 character. 
 >trimTo(string,  count)
 
@@ -68,6 +68,14 @@ trim a text to a specific count, takes three params,
 		 trimTo("123456789", 5, 9)	
 		> 12345...
 		
+**trimToSimple**
+return an array with two values, 
 
-    
+ 1. first is: the trimed text .
+ 2. what left in the text.
+
+can be usefull creating ***readmore*** functionality.
+
+    trimToSimple("this is some text",  10)
+    > [ 'this is so', 'me text' ]
 

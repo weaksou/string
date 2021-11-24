@@ -8,7 +8,8 @@ export {
   oneSpace,
   elaps,
   validateURL,
-  trimTo
+  trimTo,
+  trimToSimple
 };
 
 function capitalize(str) {
@@ -64,3 +65,13 @@ function trimTo(string, count, co){
   const dots = string.length >= dotsCounter ? "..." : "";
   return string.substring(0, count).trim() + dots;
 }
+
+function trimToSimple(string, count) {
+  return [
+    string.substring(0, count),
+    string.substring(count, string.length)
+  ]
+}
+
+
+console.log(trimToSimple("this is some text", 10));

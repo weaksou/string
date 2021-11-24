@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/weaksou/string/issues"
   },
-  "homepage": "https://github.com/weaksou/string#readme"
+  "homepage": "https://github.com/weaksou/string#readme",
+  "keywords": ["string", "validate-url"]
 }
