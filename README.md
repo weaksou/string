@@ -1,4 +1,4 @@
-﻿# I created this for my personnal use, it will grow up by time :)
+﻿# I created this for my personal use, it will grow up by time :)
 
 ## basic functions
 **capitalize**
@@ -19,7 +19,7 @@ remove all non-alphanumeric characters.
     > HelloW0r1d
 
 **escapeSimple**
-remove all non-alphanumeric characters but preserv spaces.
+remove all non-alphanumeric characters but preserve spaces.
 
     escapeSimple("Hell_o, = W0r1d!")
     > Hello W0r1d
